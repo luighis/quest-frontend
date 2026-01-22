@@ -1,14 +1,21 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleMobileNavigate = (to: string) => {
+    navigate(to);
+    setIsOpen(false);
+  };
 
   return (
     <nav className="relative ">
       <div className=" px-5 md:px-10 py-5 w-full">
         <div className="flex justify-between items-center">
-          <div className="shrink-0 flex items-center gap-3 cursor-pointer">
+          <Link to="/" className="shrink-0 flex items-center gap-3 cursor-pointer">
             <img
               src="/logo.svg"
               alt="LogiQuest"
@@ -18,7 +25,7 @@ const NavBar = () => {
               <span className="">Logi</span>
               <span className="">Quest</span>
             </span>
-          </div>
+          </Link>
 
           <div className="hidden xl:flex items-center ">
             <div className="flex  justify-center text-base text-[#F9BC07] items-center gap-3">
@@ -28,9 +35,9 @@ const NavBar = () => {
               <p className="cursor-pointer hover:text-white transition-colors">
                 Game mode
               </p>
-              <p className="cursor-pointer hover:text-white transition-colors">
+              <Link to="/settings" className="cursor-pointer hover:text-white transition-colors">
                 Setting
-              </p>
+              </Link>
 
               <div className="flex  items-center gap-2 cursor-pointer hover:scale-105 transition-transform">
                 <p>Coins</p>
@@ -103,7 +110,9 @@ const NavBar = () => {
           <div className="flex flex-col text-base text-[#F9BC07] gap-6 pt-5">
             <p className="cursor-pointer">Store</p>
             <p className="cursor-pointer">Game mode</p>
-            <p className="cursor-pointer">Setting</p>
+            <button onClick={() => handleMobileNavigate('/settings')} className="text-left cursor-pointer">
+              Setting
+            </button>
 
             <div className="flex flex-col gap-6">
               <div className="flex items-center gap-2">

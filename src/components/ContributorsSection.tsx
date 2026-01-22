@@ -88,7 +88,7 @@ const ContributorsSection: React.FC = () => {
             style={{ scrollBehavior: 'auto' }}
         >
           <div
-            className="flex h-full" style={{ whiteSpace: "nowrap" }}
+            className="flex h-full gap-5.75" style={{ whiteSpace: "nowrap" }}
           >
             {contributors.map((person, index) => (
             <div

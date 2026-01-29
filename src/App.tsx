@@ -13,10 +13,12 @@ import Footer from "./components/Footer";
 import { RecentActivity } from "./components/RecentActivity";
 import { mockActivities } from "./models/recentActivity";
 import LeaderboardPage from "./pages/LeaderboardPage";
+import HowToPlay from './components/HowToPlay';
 
 const Home = () => (
   <>
     <HeroSection />
+    <HowToPlay />
     <WhyShouldYouPlaySection />
     <ContributorsSection />
     <FaqsSection />

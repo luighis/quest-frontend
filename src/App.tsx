@@ -12,6 +12,7 @@ import GameModesList from "./components/GameMode/GameModesList";
 import Footer from "./components/Footer";
 import { RecentActivity } from "./components/RecentActivity";
 import { mockActivities } from "./models/recentActivity";
+import LeaderboardPage from "./pages/LeaderboardPage";
 import HowToPlay from './components/HowToPlay';
 
 const Home = () => (
@@ -36,6 +37,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/settings" element={<AccountSettings />} />
+        <Route path="/leaderboard" element={<LeaderboardPage />} />
       </Routes>
     </>
   );
